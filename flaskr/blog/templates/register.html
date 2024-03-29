@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %} register page{% endblock %}
+{% block content %}
+{% include 'include/form_error.html'%}
+<form  action="" method="POST">
+    {{ form.csrf_token }}
+    <div class="form-group m-5">
+        {{form.username.label()}} {{form.username(class="form-control")}}
+    </div>
+    <div class="form-group m-5">
+        {{form.email.label()}} {{form.email(class="form-control")}}
+    </div >
+    <div class="form-group m-5">
+        {{form.password.label()}}{{form.password(class="form-control")}}
+    </div>
+    <div class="form-group m-5">
+        {{form.confirm_password.label()}}{{form.confirm_password(class="form-control")}}
+    </div>
+    <div class="form-group m-5">
+        {{form.submit(class="btn btn-info")}}
+    </div >
+</form>
+
+{% endblock %}

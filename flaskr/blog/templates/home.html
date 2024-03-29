@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+  home page
+{% endblock %}
+{% block content %}
+  <h1>hi {{ current_user.username }}</h1>
+  <div class="card">
+  {% if current_user.username%}
+    {% for post in posts %}
+      <a href="{{url_for('detail',post_id=post.id)}}" class="card-body">{{ post.title }}</a>
+    {% endfor %}
+    {%endif%}
+  </div>
+{% endblock %}

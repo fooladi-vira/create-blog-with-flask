@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+  login page
+{% endblock %}
+
+{% block content %}
+  {% include 'include/form_error.html' %}
+  <form action="" method="POST">
+    {{ form.csrf_token }}
+    <table width="450" border="1" align="center">
+      <tbody>
+        <tr>
+          <td align="right" width="100">{{ form.email.label() }}</td>
+          <td>{{ form.email(class = 'form-control') }}</td>
+        </tr>
+        <tr>
+          <td align="right" width="100">{{ form.password.label(class = 'form-control-lable') }}</td>
+          <td>{{ form.password(class = 'form-control') }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ form.remember }}</td>
+          <td>{{ form.remember.label() }}</td>
+          
+          </tr>
+
+        <tr>
+          <td colspan="2" align="center">{{ form.submit(class = 'btn btn-danger') }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+{% endblock %}

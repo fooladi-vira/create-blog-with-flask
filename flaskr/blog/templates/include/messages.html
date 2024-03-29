@@ -1,0 +1,8 @@
+{% with message=get_flashed_messages(with_categories=true)    %}
+    {% if message%}
+        {%for cat,msg in message%}
+        <p class "alert alert-{{cat}}">{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+
+{% endwith %}

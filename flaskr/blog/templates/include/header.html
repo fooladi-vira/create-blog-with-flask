@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class ="navbar-nav">
+    
+    <a class="nav-item nav-link active me-5" href="{{ url_for('home') }}">صفحه اصلی </a>
+    {% if current_user.is_authenticated %}
+    <a class="nav-item nav-link active me-5" href="{{ url_for('logout') }}">خروج از حساب</a>
+    <a class="nav-item nav-link active me-5" href="{{ url_for('profile') }}">پروفایل</a>
+    {% else%}
+    
+    <a class="nav-item nav-link active me-5" href="{{ url_for('registers') }}"> ثبت نام </a>
+    <a class="nav-item nav-link active me-5" href="{{ url_for('login') }}">ورود</a>
+    
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="جستجو " aria-label="Search" />
+      <button class="btn btn-outline-success" type="submit">جستجو</button>
+    </form>
+    <a class="navbar-brand  me-5" href="{{ url_for('home') }}">ITVIRACo</a>
+    {% endif %}
+</div>
+</nav>
+
+<link rel="stylesheet" href="{{ url_for('static', filename = '/css/app.css') }}" />
+<div class="alert alert-info" role="alert">A simple info alert—check it out!</div>

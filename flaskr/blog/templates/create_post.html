@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+  create post
+{% endblock %}
+{% block content %}
+  <h3>{{ current_user.username }}</h3>
+
+  <form action="" method="post">
+    {{ form.csrf_token }}
+    {{ form.title.label(class = 'form-control-lable') }} {{ form.title(class = 'form-control') }}
+    {{ form.content.label(class = 'form-control-lable') }} {{ form.content(class = 'form-control') }}
+    <input type="submit" value="ایجاد پست " />
+  </form>
+{% endblock %}

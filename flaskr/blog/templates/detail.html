@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+  detaile page
+{% endblock %}
+{% block content %}
+{% if post.auther== current_user %}
+<a href="{{url_for('delete_post',post_id=post.id)}}" class=" btn btn-danger"> حذف پست</a>
+<a href="{{url_for('update',post_id=post.id)}}" class=" btn btn-secondary"> به روزرسانی پست</a>
+{% endif%}
+
+  <h3>{{ post.title }}</h3>
+  <small>{{post.auther.username }} {{post.date.strftime('%Y-%m-%d')}}</small>
+<p>{{post.content}}</p>
+ 
+{% endblock %}
